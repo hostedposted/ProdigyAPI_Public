@@ -1,0 +1,16 @@
+{
+  "name": "prodigyapi",
+  "version": "1.0.0",
+  "description": "An API that allows you to get info on Prodigy assets.",
+  "main": "src/index.js",
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "ArcerionDev",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.17.1",
+    "node-fetch": "^2.6.1"
+  }
+}

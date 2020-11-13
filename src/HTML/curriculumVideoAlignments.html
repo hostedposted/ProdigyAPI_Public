@@ -1,0 +1,32 @@
+<title>Docs</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap-theme.min.css">
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
+  <link crossorigin="anonymous" media="all" integrity="sha512-QV1ZNBjZz8stPx+uh4ZAKc6AJ1z8A9VHut/SGtgbc+iYLfhrh68QmDH3rZgkXJ0BWIOcDw+ILnWcctH0ljcHPg==" rel="stylesheet" href="https://github.githubassets.com/assets/frameworks-415d593418d9cfcb2d3f1fae87864029.css" />
+  
+  <link crossorigin="anonymous" media="all" integrity="sha512-Lr1OreyD2zVhGGvY7ZtLl+QipuIhywoWgbqShl9Agpy2eUOZBgZ90PGp9pFA89dbeZd/a3uLbrZb3c2F9VSClQ==" rel="stylesheet" href="https://github.githubassets.com/assets/github-2ebd4eadec83db3561186bd8ed9b4b97.css" />
+  <div id="readme" class="Box-body readme blob js-code-block-container p-5 p-xl-6 gist-border-0">
+    <article class="markdown-body entry-content container-lg" itemprop="text"><h1><a id="user-content-curriculumvideoalignments-endpoint" class="anchor" aria-hidden="true" href="#curriculumvideoalignments-endpoint"></a>curriculumVideoAlignments endpoint</h1>
+<h2><a id="user-content-overview" class="anchor" aria-hidden="true" href="#overview"></a>Overview</h2>
+<h2><a id="user-content-the-curriculumvideoalignments-endpoint-gets-info-on-curriculumvideoalignments-in-prodigy-which-is-data-based-off-of-videos-that-assist-with-learning-certain-educational-topics-seems-to-require-an-api-key-to-access-so-a-bit-pointless-other-then-for-informational-purposes" class="anchor" aria-hidden="true" href="#the-curriculumvideoalignments-endpoint-gets-info-on-curriculumvideoalignments-in-prodigy-which-is-data-based-off-of-videos-that-assist-with-learning-certain-educational-topics-seems-to-require-an-api-key-to-access-so-a-bit-pointless-other-then-for-informational-purposes"></a>The curriculumVideoAlignments endpoint gets info on curriculumVideoAlignments in Prodigy, which is data based off of videos that assist with learning certain educational topics. Seems to require an API key to access, so a bit pointless other then for informational purposes.</h2>
+<h4><a id="user-content-endpoint" class="anchor" aria-hidden="true" href="#endpoint"></a>Endpoint:</h4>
+<div class="highlight highlight-source-httpspec"><pre>http://localhost:<span class="pl-c1">4000</span>/v<span class="pl-c1">1</span>/curriculumVideoAlignments/</pre></div>
+<p>Example request:</p>
+<div class="highlight highlight-source-js"><pre><span class="pl-en">fetch</span><span class="pl-kos">(</span><span class="pl-s">'http://localhost:4000/v1/curriculumVideoAlignments/'</span><span class="pl-kos">)</span><span class="pl-kos">.</span><span class="pl-en">then</span><span class="pl-kos">(</span><span class="pl-s1">response</span> <span class="pl-c1">=&gt;</span> <span class="pl-s1">response</span><span class="pl-kos">.</span><span class="pl-en">json</span><span class="pl-kos">(</span><span class="pl-kos">)</span><span class="pl-kos">)</span><span class="pl-kos">.</span><span class="pl-en">then</span><span class="pl-kos">(</span><span class="pl-s1">data</span> <span class="pl-c1">=&gt;</span> <span class="pl-kos">{</span><span class="pl-smi">console</span><span class="pl-kos">.</span><span class="pl-en">log</span><span class="pl-kos">(</span><span class="pl-s1">data</span><span class="pl-kos">)</span><span class="pl-kos">}</span><span class="pl-kos">)</span></pre></div>
+<p>Object properties:</p>
+<div class="highlight highlight-source-js"><pre><span class="pl-s1">cva</span><span class="pl-kos">[</span><span class="pl-s1">cvaID</span><span class="pl-kos">]</span><span class="pl-kos">.</span><span class="pl-c1">ID</span>
+<span class="pl-s1">cva</span><span class="pl-kos">[</span><span class="pl-s1">cvaID</span><span class="pl-kos">]</span><span class="pl-kos">.</span><span class="pl-c1">assetID</span>
+<span class="pl-s1">cva</span><span class="pl-kos">[</span><span class="pl-s1">cvaID</span><span class="pl-kos">]</span><span class="pl-kos">.</span><span class="pl-c1">type</span>
+<span class="pl-s1">cva</span><span class="pl-kos">[</span><span class="pl-s1">cvaID</span><span class="pl-kos">]</span><span class="pl-kos">.</span><span class="pl-c1">gender</span>
+<span class="pl-s1">cva</span><span class="pl-kos">[</span><span class="pl-s1">cvaID</span><span class="pl-kos">]</span><span class="pl-kos">.</span><span class="pl-c1">data</span>
+<span class="pl-s1">cva</span><span class="pl-kos">[</span><span class="pl-s1">cvaID</span><span class="pl-kos">]</span><span class="pl-kos">.</span><span class="pl-c1">metadata</span>
+<span class="pl-s1">cva</span><span class="pl-kos">[</span><span class="pl-s1">cvaID</span><span class="pl-kos">]</span><span class="pl-kos">.</span><span class="pl-c1">name</span></pre></div>
+<p>Data properties:</p>
+<div class="highlight highlight-source-js"><pre><span class="pl-s1">cva</span><span class="pl-kos">[</span><span class="pl-s1">cvaID</span><span class="pl-kos">]</span><span class="pl-kos">.</span><span class="pl-c1">data</span><span class="pl-kos">.</span><span class="pl-c1">name</span>
+<span class="pl-s1">cva</span><span class="pl-kos">[</span><span class="pl-s1">cvaID</span><span class="pl-kos">]</span><span class="pl-kos">.</span><span class="pl-c1">data</span><span class="pl-kos">.</span><span class="pl-c1">expectations</span></pre></div>
+<p>There is only one object in CVA, which is</p>
+<div class="highlight highlight-source-httpspec"><pre>http://localhost:<span class="pl-c1">4000</span>/v<span class="pl-c1">1</span>/curriculumVideoAlignments/<span class="pl-c1">0</span></pre></div>
+<p>Which is the same as the default endpoint, so there is no need to simplify.</p>
+</article>
+  </div>
