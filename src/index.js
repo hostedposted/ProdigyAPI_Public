@@ -4,13 +4,15 @@
     const path = require('path')
     const port = 4000
     const fetch = require('node-fetch')
-    let gameAPIdata = await (await fetch('https://api.prodigygame.com/game-api/status')).json()
-     let version = gameAPIdata.data.prodigyGameFlags.gameDataVersion
+    let version = JSON.parse((await (await fetch("https://play.prodigygame.com/play")).text()).match(
+		/(?<=gameStatusDataStr = ').+(?=')/
+	)[0]).prodigyGameFlags.gameDataVersion
     let prodigydata = await (await fetch(`https://cdn.prodigygame.com/game/data/production/${version}/data.json`)).json()
 
     app.get('/v1/:type/:id', async function (req, res) {
-        let gameAPIdata = await (await fetch('https://api.prodigygame.com/game-api/status')).json()
-     let version = gameAPIdata.data.prodigyGameFlags.gameDataVersion
+		let version = JSON.parse((await (await fetch("https://play.prodigygame.com/play")).text()).match(
+			/(?<=gameStatusDataStr = ').+(?=')/
+		)[0]).prodigyGameFlags.gameDataVersion
         prodigydata = await (await fetch(`https://cdn.prodigygame.com/game/data/production/${version}/data.json`)).json()
         try {
             if (!prodigydata[req.params.type][req.params.id]) {
@@ -31,8 +33,9 @@
         }
     });
     app.get('/v1/:type', async function (req, res) {
-        let gameAPIdata = await (await fetch('https://api.prodigygame.com/game-api/status')).json()
-        let version = gameAPIdata.data.prodigyGameFlags.gameDataVersion
+        let version = JSON.parse((await (await fetch("https://play.prodigygame.com/play")).text()).match(
+			/(?<=gameStatusDataStr = ').+(?=')/
+		)[0]).prodigyGameFlags.gameDataVersion
         prodigydata = await (await fetch(`https://cdn.prodigygame.com/game/data/production/${version}/data.json`)).json()
         if (!prodigydata[req.params.type]) {
             res.status(404)
